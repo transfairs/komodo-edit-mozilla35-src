@@ -22,7 +22,11 @@ Mercurial:
 
 ```python
 mozSrcType = 'tarball'
-mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v1/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src.tar.gz'
+mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v2/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v2.tar.gz'
 ```
 
-SHA-256: `b1b44f4737b62ef447b79fe0026ed1ca2ee7fce25f3a763dd4de14b2ef13ff2f`
+SHA-256: `93551ff595583ceb434853aac2b73eda824cb6ec7c22bbdd0b7ca41fa9a99b4f`
+
+Note: `v1` had 34 stray `*.orig` patch-backup files left over from repeated
+local rebuilds, which broke `autoupdate_base_dir.patch` application on a
+fresh extract. `v2` fixes this — use `v2`.
