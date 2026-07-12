@@ -22,17 +22,20 @@ Mercurial:
 
 ```python
 mozSrcType = 'tarball'
-mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v4/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v4.tar.gz'
+mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v5/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v5.tar.gz'
 ```
 
-SHA-256: `7988f91b38e42921ace3a5bcc2aea6573894e3a4adb89ad00f74209e42b2c5cd`
+SHA-256: `75f3ddaf610a07f3bfe9457dcf7de5695c3809653524386514c3fe04018acdd0`
 
 Note: `v1` had 34 stray `*.orig` patch-backup files left over from repeated
 local rebuilds. `v2` fixed that but was still missing the top-level
 `mozilla/` wrapper directory that `build.py`'s `target_src()` expects,
 which broke every patch application. `v3` fixed that but was missing an
 `.hgignore` placeholder that `target_configure_mozilla()` unconditionally
-opens/appends to. `v4` fixes all three — use `v4`.
+opens/appends to. `v4` fixed that but still shipped `mach.log` (a build
+log with local-machine environment variable dumps) and internal
+`.patchtree-state` files. **`v5` fixes all of the above — use `v5`.**
+v1-v4 are superseded; prefer v5 if you already grabbed an older one.
 
 Also note: KomodoEdit's `scripts/komodo-repro.sh` skips the
 `patch`/`patch_pyxpcom`/`patch_komodo` build.py targets entirely when
