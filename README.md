@@ -12,7 +12,7 @@ tree at revision `FIREFOX_35_0_RELEASE` (node `32e36869f84a`), with all of
 KomodoEdit's `mozilla/patches-new/mozilla-35.0/` patches already applied.
 
 See the [Releases](../../releases) page for the downloadable tarball
-(`.tar.zst`) and its SHA-256 checksum.
+(`.tar.gz`) and its SHA-256 checksum.
 
 ## Usage
 
@@ -22,5 +22,7 @@ Mercurial:
 
 ```python
 mozSrcType = 'tarball'
-mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/<tag>/<asset>.tar.zst'
+mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v1/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src.tar.gz'
 ```
+
+SHA-256: `b1b44f4737b62ef447b79fe0026ed1ca2ee7fce25f3a763dd4de14b2ef13ff2f`
