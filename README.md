@@ -22,12 +22,21 @@ Mercurial:
 
 ```python
 mozSrcType = 'tarball'
-mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v3/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v3.tar.gz'
+mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v4/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v4.tar.gz'
 ```
 
-SHA-256: `5f402a7d7f5241a5748f6b165f3675571a4438e8c482c882a86770f0598cfcc6`
+SHA-256: `7988f91b38e42921ace3a5bcc2aea6573894e3a4adb89ad00f74209e42b2c5cd`
 
 Note: `v1` had 34 stray `*.orig` patch-backup files left over from repeated
 local rebuilds. `v2` fixed that but was still missing the top-level
 `mozilla/` wrapper directory that `build.py`'s `target_src()` expects,
-which broke every patch application. `v3` fixes both — use `v3`.
+which broke every patch application. `v3` fixed that but was missing an
+`.hgignore` placeholder that `target_configure_mozilla()` unconditionally
+opens/appends to. `v4` fixes all three — use `v4`.
+
+Also note: KomodoEdit's `scripts/komodo-repro.sh` skips the
+`patch`/`patch_pyxpcom`/`patch_komodo` build.py targets entirely when
+building from this tarball, since the patches are already applied and
+re-running patchtree.py's "already applied" detection against them is not
+reliable for every patch (some multi-file/new-file patches don't get
+detected and fail to re-apply cleanly).
