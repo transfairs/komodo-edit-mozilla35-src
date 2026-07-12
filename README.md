@@ -22,11 +22,12 @@ Mercurial:
 
 ```python
 mozSrcType = 'tarball'
-mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v2/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v2.tar.gz'
+mozSrcTarball = 'https://github.com/transfairs/komodo-edit-mozilla35-src/releases/download/mozilla-35.0-ko12.10-v3/mozilla-35.0-ko12.10-FIREFOX_35_0_RELEASE-patched-src-v3.tar.gz'
 ```
 
-SHA-256: `93551ff595583ceb434853aac2b73eda824cb6ec7c22bbdd0b7ca41fa9a99b4f`
+SHA-256: `5f402a7d7f5241a5748f6b165f3675571a4438e8c482c882a86770f0598cfcc6`
 
 Note: `v1` had 34 stray `*.orig` patch-backup files left over from repeated
-local rebuilds, which broke `autoupdate_base_dir.patch` application on a
-fresh extract. `v2` fixes this — use `v2`.
+local rebuilds. `v2` fixed that but was still missing the top-level
+`mozilla/` wrapper directory that `build.py`'s `target_src()` expects,
+which broke every patch application. `v3` fixes both — use `v3`.
